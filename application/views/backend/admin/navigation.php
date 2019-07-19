@@ -69,6 +69,14 @@
             </ul>
         </li>
 
+        <!-- Running year -->
+        <li class="<?php if ($page_name == 'running_year' || $page_name == 'running_year') echo 'active';?> ">
+            <a href="<?php echo site_url('admin/running_year') ?>">
+                <i class="entypo-book"></i>
+                <span>Running Year</span>
+            </a>
+        </li>
+
 
     </ul>
 

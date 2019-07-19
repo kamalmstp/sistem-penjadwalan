@@ -1,5 +1,6 @@
 <?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
@@ -7,6 +8,7 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->library('session');
+        $this->load->model('Running_year');
     }
 
     function index(){
@@ -22,6 +24,16 @@ class Admin extends CI_Controller
         $data['page_name']  = 'dashboard';
         $data['page_title'] = 'Administrator Dashboard';
 
+        $this->load->view('backend/index', $data);
+    }
+
+    function running_year(){
+        if ($this->session->userdata('user_login') == 1) {
+            redirect(site_url('admin/dashboard'), 'refresh');
+        }
+        $data['page_name'] = 'running_year';
+        $data['page_title'] = 'Running year';
+        $data['year'] = $this->Running_year->selectYear();
         $this->load->view('backend/index', $data);
     }
 }
