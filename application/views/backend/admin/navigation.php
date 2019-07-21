@@ -41,32 +41,18 @@
 
         <!-- DASHBOARD -->
         <li class="<?php if ($page_name == 'dashboard') echo 'active'; ?> " style="border-top:1px solid #232540;">
-            <a href="#">
+            <a href="<?php echo site_url('admin/dashboard') ?>">
                 <i class="entypo-gauge"></i>
-                <span>dashboard</span>
+                <span>Dashboard</span>
             </a>
         </li>
 
         <!-- DOSEN -->
         <li class="<?php if ($page_name == 'dosen' || $page_name == 'dosen') echo 'opened active';?> ">
-            <a href="#">
+            <a href="<?php echo site_url('admin/lecturers') ?>">
                 <i class="entypo-book"></i>
                 <span>Dosen</span>
             </a>
-            <ul>
-                <li class="<?php if ($page_name == 'add_dosen') echo 'active'; ?> ">
-                    <a href="#">
-                        <i class="entypo-dot"></i>
-                        <span>Add Dosen</span>
-                    </a>
-                </li>
-                <li class="<?php if ($page_name == 'list_dosen') echo 'active'; ?> ">
-                    <a href="#">
-                        <i class="entypo-dot"></i>
-                        <span>List Dosen</span>
-                    </a>
-                </li>
-            </ul>
         </li>
 
         <!-- Running year -->
