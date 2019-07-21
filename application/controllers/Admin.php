@@ -8,6 +8,7 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->library('session');
+        $this->load->model('Lecturer');
         $this->load->model('Running_year');
     }
 
@@ -24,6 +25,16 @@ class Admin extends CI_Controller
         $data['page_name']  = 'dashboard';
         $data['page_title'] = 'Administrator Dashboard';
 
+        $this->load->view('backend/index', $data);
+    }
+
+    function lecturers(){
+        if ($this->session->userdata('user_login') == 1) {
+            redirect(site_url('admin/dashboard'), 'refresh');
+        }
+        $data['page_name'] = 'lecturers';
+        $data['page_title'] = 'Lecturers';
+        $data['lecture'] = $this->Lecturer->selectLecturer();
         $this->load->view('backend/index', $data);
     }
 
