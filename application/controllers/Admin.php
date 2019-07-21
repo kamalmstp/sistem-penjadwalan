@@ -9,6 +9,7 @@ class Admin extends CI_Controller
         $this->load->database();
         $this->load->library('session');
         $this->load->model('Running_year');
+        $this->load->model('Room');
     }
 
     function index(){
@@ -34,6 +35,16 @@ class Admin extends CI_Controller
         $data['page_name'] = 'running_year';
         $data['page_title'] = 'Running year';
         $data['year'] = $this->Running_year->selectYear();
+        $this->load->view('backend/index', $data);
+    }
+
+    function room(){
+        if ($this->session->userdata('user_login') == 1) {
+            redirect(site_url('admin/dashboard'), 'refresh');
+        }
+        $data['page_name'] = 'room';
+        $data['page_title'] = 'Room';
+        $data['room'] = $this->Room->selectRoom();
         $this->load->view('backend/index', $data);
     }
 }

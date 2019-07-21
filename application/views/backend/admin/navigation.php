@@ -77,6 +77,13 @@
             </a>
         </li>
 
+        <!-- Room -->
+        <li class="<?php if ($page_name == 'room' || $page_name == 'room') echo 'active';?> ">
+            <a href="<?php echo site_url('admin/room') ?>">
+                <i class="entypo-book"></i>
+                <span>Room</span>
+            </a>
+        </li>
 
     </ul>
 
