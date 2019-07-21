@@ -17,3 +17,9 @@ ALTER TABLE `admin`
 COMMIT;
 
 CREATE TABLE `scheduling`.`running_year` ( `running_year_id` INT(5) NOT NULL AUTO_INCREMENT , `name` VARCHAR(100) NULL , `description` VARCHAR(100) NULL , PRIMARY KEY (`running_year_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `scheduling`.`room` (
+  `room_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NULL,
+  `capacity` int(11) NULL
+, PRIMARY KEY (`room_id`)) ENGINE = InnoDB;
