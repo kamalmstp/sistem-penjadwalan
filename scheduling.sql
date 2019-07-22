@@ -23,3 +23,15 @@ CREATE TABLE `scheduling`.`room` (
   `name` varchar(100) NULL,
   `capacity` int(11) NULL
 , PRIMARY KEY (`room_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `lecturers` (
+  `lecturer_id` int(11) NOT NULL,
+  `nip` varchar(50) DEFAULT NULL,
+  `name` varchar(10) DEFAULT NULL,
+  `sex` varchar(10) DEFAULT NULL,
+  `total_hour` varchar(20) DEFAULT NULL,
+  `total_sks` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `lecturers` (`lecturer_id`, `nip`, `name`, `sex`, `total_hour`, `total_sks`) VALUES
+(1, '12344556', 'nama', 'Laki-Laki', '5', '12');
